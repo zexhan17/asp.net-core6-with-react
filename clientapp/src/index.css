@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.scroll {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.black_border{
+    border: black 1px solid;
+}
+
+@media (max-width: 768px){
+    th {
+        display: none;
+    }
+    td {
+        display: grid;
+        gap: 0.5rem;
+        grid-template-columns: 15ch auto;
+        padding: 0rem 1rem !important;
+    }
+    td:first-child {
+        padding-top: 1rem !important;
+    }
+    td:last-child {
+        padding-bottom: 1rem !important;
+    }
+    td::before {
+        content: attr(data-cell) ": ";
+        font-weight: 700;
+        text-transform: capitalize;
+    }
+}
